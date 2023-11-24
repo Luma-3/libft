@@ -89,9 +89,9 @@ $(OBJ_DIR)%.o : %.c libft.h
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 	@$(eval COMPILED_SRCS=$(shell echo $$(($(COMPILED_SRCS)+1))))
-	@echo -n "$(COLOR_BLUE)Compiling Objects: $(COLOR_RESET)[$(COLOR_GREEN)"
-	@for i in $(shell seq 1 50); do \
-		if [ $$i -le $$(($(COMPILED_SRCS)*50/$(TOTAL_SRCS))) ]; then \
+	@echo -n "$(COLOR_BLUE)Compiling Objects Libft: $(COLOR_RESET)[$(COLOR_GREEN)"
+	@for i in $(shell seq 1 25); do \
+		if [ $$i -le $$(($(COMPILED_SRCS)*25/$(TOTAL_SRCS))) ]; then \
 			echo -n "♥"; \
 		else \
 			echo -n "."; \
