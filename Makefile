@@ -90,9 +90,9 @@ $(OBJ_DIR)%.o : %.c libft.h
 
 	@$(eval COMPILED_SRCS=$(shell echo $$(($(COMPILED_SRCS)+1))))
 	@echo -n "$(COLOR_BLUE)Compiling Objects: $(COLOR_RESET)[$(COLOR_GREEN)"
-	@for i in $(shell seq 1 25); do \
-		if [ $$i -le $$(($(COMPILED_SRCS)*25/$(TOTAL_SRCS))) ]; then \
-			echo -n "#"; \
+	@for i in $(shell seq 1 50); do \
+		if [ $$i -le $$(($(COMPILED_SRCS)*50/$(TOTAL_SRCS))) ]; then \
+			echo -n "♥"; \
 		else \
 			echo -n "."; \
 		fi; \
@@ -110,7 +110,7 @@ clean:
 	@rm -fr  $(OBJ_DIR)
 	@echo "$(COLOR_GREEN)Remove Object complete !$(COLOR_RESET)"
 
-fclean: clean
+fclean: clean cleanso
 	@rm -f $(NAME)
 	@echo "$(COLOR_GREEN)Remove libft complete !$(COLOR_RESET)"
 
