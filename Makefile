@@ -52,6 +52,18 @@ SRC		=	ft_atoi.c 			\
 			ft_lstclear.c		\
 			ft_lstiter.c		\
 			ft_lstmap.c			\
+			$(SRC_PRINTF)
+
+
+SRC_PRINTF_DIR = printf/
+SRC_PRINTF =	flags_utils.c		\
+				ft_printf.c			\
+				utils.c				\
+				format_function.c	\
+				format_ptr.c		\
+				format_hex.c		\
+				format_unsigned.c	\
+				specifier_utils.c
 
 ################
 ##	OBJ/NAME  ##
@@ -64,12 +76,14 @@ OBJ_DIR	=	obj/
 OBJ		=	$(SRC:.c=.o)
 OBJ_PREFIXED = $(addprefix $(OBJ_DIR), $(OBJ))
 
+SRC_PRINTF_PREFIXED = $(addprefix $(SRC_PRINTF_DIR), $(SRC_PRINTF))
+
 
 ################
 ##	PROGRESS  ##
 ################
 
-TOTAL_SRCS := $(words $(SRC))
+TOTAL_SRCS := $(words $(SRC)) $(words $(SRC_PRINTF))
 COMPILED_SRCS := 0
 
 ##############
@@ -88,16 +102,16 @@ $(OBJ_DIR)%.o : %.c libft.h
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
-	@$(eval COMPILED_SRCS=$(shell echo $$(($(COMPILED_SRCS)+1))))
-	@echo -n "$(COLOR_BLUE)Compiling Objects Libft: $(COLOR_RESET)[$(COLOR_GREEN)"
-	@for i in $(shell seq 1 25); do \
-		if [ $$i -le $$(($(COMPILED_SRCS)*25/$(TOTAL_SRCS))) ]; then \
-			echo -n "♥"; \
-		else \
-			echo -n "."; \
-		fi; \
-	done
-	@echo -n "$(COLOR_RESET)] $(COMPILED_SRCS)/$(TOTAL_SRCS)\r"
+# @$(eval COMPILED_SRCS=$(shell echo $$(($(COMPILED_SRCS)+1))))
+# @echo -n "$(COLOR_BLUE)Compiling Objects Libft: $(COLOR_RESET)[$(COLOR_GREEN)"
+# @for i in $(shell seq 1 25); do \
+# 	if [ $$i -le $$(($(COMPILED_SRCS)*25/$(TOTAL_SRCS))) ]; then \
+# 		echo -n "♥"; \
+# 	else \
+# 		echo -n "."; \
+# 	fi; \
+# done
+# @echo -n "$(COLOR_RESET)] $(COMPILED_SRCS)/$(TOTAL_SRCS)\r"
 
 all: $(NAME)
 
