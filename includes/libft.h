@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/03 16:46:02 by jbrousse         ###   ########.fr       */
+/*   Updated: 2023/12/20 16:46:00 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,10 @@ int		ft_isdigit(int c);
  */
 int		ft_isprint(int c);
 
+/* ################	*/
+/*	Char function	*/
+/* ################	*/
+
 /**
  * @brief Converts a given uppercase letter to lowercase.
  *
@@ -167,9 +171,9 @@ int		ft_toupper(int c);
  */
 int		ft_tolower(int c);
 
-/* ####################	*/
-/*	Memorie function	*/
-/* #################### */
+/* ################	*/
+/*	Memory function	*/
+/* ################	*/
 
 /**
  * @brief Sets the first len bytes of the memory area pointed to by s to zero.
@@ -425,7 +429,7 @@ int		ft_atoi(const char *str);
 char	*ft_itoa(int nb);
 
 /* ################	*/
-/*  Print Function	*/
+/*  Write Function	*/
 /* ################	*/
 
 /**
