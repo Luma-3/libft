@@ -6,36 +6,36 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:35:49 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/21 13:37:35 by jbrousse         ###   ########.fr       */
+/*   Updated: 2023/12/21 14:42:42 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_int(const char *str, int i)
-{
-	int	nb;
-
-	nb = 0;
-	while (str[i] && (47 < str[i] && str[i] < 58))
-	{
-		nb = nb * 10 + str[i] - '0';
-		i++;
-	}
-	return (nb);
-}
-
-static double	get_dec(const char *str, int i)
+static double	get_nb(const char *str, int *i)
 {
 	double	nb;
+	double	div;
 
 	nb = 0;
-	while (str[i] && (47 < str[i] && str[i] < 58))
+	div = 0.0;
+	while (str[*i] && ((47 < str[*i] && str[*i] < 58) || str[*i] == '.'))
 	{
-		nb = nb * 10 + str[i] - '0';
-		i++;
+		if (str[*i] == '.')
+			div = 10;
+		else
+		{
+			if (div > 0.0)
+			{
+				nb += (str[*i] - '0') / div;
+				div *= 10;
+			}
+			else
+				nb = nb * 10 + str[*i] - '0';
+		}
+		(*i)++;
 	}
-	return (nb / 10);
+	return (nb);
 }
 
 double	ft_strtod(const char *str)
@@ -55,7 +55,6 @@ double	ft_strtod(const char *str)
 			sign *= -1;
 		i++;
 	}
-	nb = (double)get_int(str, i);
-	nb += get_dec(str, i);
+	nb = get_nb(str, &i);
 	return (nb * sign);
 }
