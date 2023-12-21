@@ -43,7 +43,8 @@ SRC_GNL					=	$(addprefix $(SRC_GNL_DIR), $(SRC_GNL_LIST))
 
 SRC_INTEGER_DIR			=	integer/
 SRC_INTEGER_LIST		=	ft_atoi.c 			\
-							ft_itoa.c
+							ft_itoa.c			\
+							ft_strtod.c
 SRC_INTEGER				=	$(addprefix $(SRC_INTEGER_DIR), $(SRC_INTEGER_LIST))	
 
 SRC_MEM_DIR				=	memory/

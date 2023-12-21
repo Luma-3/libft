@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/20 16:46:00 by jbrousse         ###   ########.fr       */
+/*   Updated: 2023/12/21 13:38:04 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -410,6 +410,15 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 /* ####################	*/
 /*  Integer Function	*/
 /* ####################	*/
+
+/**
+ * @brief Converts the initial portion of 
+ * 		  the null-terminated string str to a double.
+ *
+ * @param str A pointer to the null-terminated string to be converted.
+ * @return The converted double value.
+ */
+double	ft_strtod(const char *str);
 
 /**
  * @brief Converts the initial portion of
