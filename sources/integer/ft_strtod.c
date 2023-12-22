@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:35:49 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/21 14:42:42 by jbrousse         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:12:12 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static double	get_nb(const char *str, int *i)
 	div = 0.0;
 	while (str[*i] && ((47 < str[*i] && str[*i] < 58) || str[*i] == '.'))
 	{
+		if (str[*i] == '.' && div < 0.0)
+			return (-1);
 		if (str[*i] == '.')
 			div = 10;
 		else
