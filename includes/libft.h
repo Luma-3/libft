@@ -6,16 +6,17 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/22 13:13:20 by jbrousse         ###   ########.fr       */
+/*   Updated: 2023/12/22 15:45:37 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include "ft_printf.h"
+# include "get_next_line.h"
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -34,7 +35,7 @@ typedef struct s_list
  * @param content The content to be stored in the new node.
  * @return A pointer to the newly created list node.
  */
-t_list	*ft_lstnew(void	*content);
+t_list				*ft_lstnew(void *content);
 
 /**
  * @brief Adds a new node to the front of the list.
@@ -42,7 +43,7 @@ t_list	*ft_lstnew(void	*content);
  * @param lst A pointer to the pointer to the list.
  * @param new The new node to be added to the front.
  */
-void	ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_front(t_list **lst, t_list *new);
 
 /**
  * @brief Returns the number of elements in the list.
@@ -50,7 +51,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
  * @param lst The list to be counted.
  * @return The number of elements in the list.
  */
-int		ft_lstsize(t_list *lst);
+int					ft_lstsize(t_list *lst);
 
 /**
  * @brief Returns the last element of the list.
@@ -58,7 +59,7 @@ int		ft_lstsize(t_list *lst);
  * @param lst The list.
  * @return A pointer to the last element of the list.
  */
-t_list	*ft_lstlast(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
 
 /**
  * @brief Adds a new node to the back of the list.
@@ -66,15 +67,16 @@ t_list	*ft_lstlast(t_list *lst);
  * @param lst A pointer to the pointer to the list.
  * @param new The new node to be added to the back.
  */
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *new);
 
 /**
- * @brief Deletes a single node in the list using the provided deletion function.
+
+	* @brief Deletes a single node in the list using the provided deletion function.
  *
  * @param lst The node to be deleted.
  * @param del The deletion function to be applied to the node's content.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
 
 /**
  * @brief Clears the entire list using the provided deletion function.
@@ -82,28 +84,29 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
  * @param lst A pointer to the pointer to the list.
  * @param del The deletion function to be applied to each node's content.
  */
-void	ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
 
 /**
- * @brief Iterates over the list, applying the provided 
+ * @brief Iterates over the list, applying the provided
  * function to each node's content.
  *
  * @param lst The list to be iterated over.
  * @param f The function to be applied to each node's content.
  */
-void	ft_lstiter(t_list *lst, void (*f)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
 
 /**
- * @brief Creates a new list resulting from applying the 
+ * @brief Creates a new list resulting from applying the
  * provided function to each node's content.
  *
  * @param lst The list to be mapped.
  * @param f The mapping function to be applied to each node's content.
- * @param del The deletion function to be applied to the 
+ * @param del The deletion function to be applied to the
  * content of any node in case of failure.
  * @return A pointer to the newly created list.
  */
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
 
 /* ####################	*/
 /*	Compare function	*/
@@ -115,7 +118,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * @param c The character to be checked.
  * @return 1 if the character is alphanumeric, 0 otherwise.
  */
-int		ft_isalnum(int c);
+int					ft_isalnum(int c);
 
 /**
  * @brief Checks if the given character is an alphabetic character.
@@ -123,7 +126,7 @@ int		ft_isalnum(int c);
  * @param c The character to be checked.
  * @return 1 if the character is alphabetic, 0 otherwise.
  */
-int		ft_isalpha(int c);
+int					ft_isalpha(int c);
 
 /**
  * @brief Checks if the given character is a valid ASCII character.
@@ -131,7 +134,7 @@ int		ft_isalpha(int c);
  * @param c The character to be checked.
  * @return 1 if the character is a valid ASCII character, 0 otherwise.
  */
-int		ft_isascii(int c);
+int					ft_isascii(int c);
 
 /**
  * @brief Checks if the given character is a digit (0-9).
@@ -139,7 +142,7 @@ int		ft_isascii(int c);
  * @param c The character to be checked.
  * @return 1 if the character is a digit, 0 otherwise.
  */
-int		ft_isdigit(int c);
+int					ft_isdigit(int c);
 
 /**
  * @brief Checks if the given character is a printable character.
@@ -147,7 +150,7 @@ int		ft_isdigit(int c);
  * @param c The character to be checked.
  * @return 1 if the character is printable, 0 otherwise.
  */
-int		ft_isprint(int c);
+int					ft_isprint(int c);
 
 /* ################	*/
 /*	Char function	*/
@@ -158,18 +161,18 @@ int		ft_isprint(int c);
  *
  * @param c The character to be converted.
  * @return The lowercase equivalent of the input character,
- *  	   or the input character if it's not an uppercase letter.
+ *  		or the input character if it's not an uppercase letter.
  */
-int		ft_toupper(int c);
+int					ft_toupper(int c);
 
 /**
  * @brief Converts a given lowercase letter to uppercase.
  *
  * @param c The character to be converted.
  * @return The uppercase equivalent of the input character,
- * 		   or the input character if it's not a lowercase letter.
+ * 			or the input character if it's not a lowercase letter.
  */
-int		ft_tolower(int c);
+int					ft_tolower(int c);
 
 /* ################	*/
 /*	Memory function	*/
@@ -181,7 +184,7 @@ int		ft_tolower(int c);
  * @param s   A pointer to the memory area to be zeroed.
  * @param len The number of bytes to zero.
  */
-void	ft_bzero(void *s, size_t len);
+void				ft_bzero(void *s, size_t len);
 
 /**
  * @brief Sets the first len bytes of the memory
@@ -192,7 +195,7 @@ void	ft_bzero(void *s, size_t len);
  * @param len The number of bytes to set.
  * @return A pointer to the memory area s.
  */
-void	*ft_memset(void *s, int c, size_t len);
+void				*ft_memset(void *s, int c, size_t len);
 
 /**
  * @brief Copies len bytes from the source memory
@@ -203,7 +206,7 @@ void	*ft_memset(void *s, int c, size_t len);
  * @param len The number of bytes to copy.
  * @return A pointer to the destination memory area dst.
  */
-void	*ft_memcpy(void *dst, const void *src, size_t len);
+void				*ft_memcpy(void *dst, const void *src, size_t len);
 
 /**
  * @brief Copies len bytes from the source memory
@@ -215,7 +218,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t len);
  * @param len The number of bytes to copy.
  * @return A pointer to the destination memory area dst.
  */
-void	*ft_memmove(void *dst, const void *src, size_t len);
+void				*ft_memmove(void *dst, const void *src, size_t len);
 
 /**
  * @brief Compares the first size bytes of memory
@@ -224,23 +227,23 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
  * @param s1   A pointer to the first memory area.
  * @param s2   A pointer to the second memory area.
  * @param size The number of bytes to compare.
- * @return     An integer less than, equal to, 
- * 			   or greater than zero if s1 is found,
+ * @return     An integer less than, equal to,
+ * 				or greater than zero if s1 is found,
  *             respectively, to be less than, to match, or be greater than s2.
  */
-int		ft_memcmp(const void *s1, const void *s2, size_t size);
+int					ft_memcmp(const void *s1, const void *s2, size_t size);
 
 /**
- * @brief Locates the first occurrence of c (converted to an unsigned char) 
- * 		  in the first size bytes of the memory area pointed to by s.
+ * @brief Locates the first occurrence of c (converted to an unsigned char)
+ * 			in the first size bytes of the memory area pointed to by s.
  *
  * @param s    A pointer to the memory area to be searched.
  * @param c    The value to search for (interpreted as an unsigned char).
  * @param size The number of bytes to search.
- * @return     A pointer to the located byte, 
- * 			   or NULL if no such byte exists within the given size.
+ * @return     A pointer to the located byte,
+ * 				or NULL if no such byte exists within the given size.
  */
-void	*ft_memchr(const void *s, int c, size_t size);
+void				*ft_memchr(const void *s, int c, size_t size);
 
 /**
  * @brief Allocates memory for an array of nmemb elements, each of size bytes,
@@ -250,7 +253,7 @@ void	*ft_memchr(const void *s, int c, size_t size);
  * @param size  The size of each element in bytes.
  * @return A pointer to the allocated memory, or NULL if the allocation fails.
  */
-void	*ft_calloc(size_t nmemb, size_t size);
+void				*ft_calloc(size_t nmemb, size_t size);
 
 /* ################	*/
 /*  String Function	*/
@@ -262,53 +265,53 @@ void	*ft_calloc(size_t nmemb, size_t size);
  * @param s A pointer to the null-terminated string.
  * @return The length of the string.
  */
-size_t	ft_strlen(const char *s);
+size_t				ft_strlen(const char *s);
 
 /**
- * @brief Copies up to size - 1 characters from the null-terminated 
- * 		  string src to dst, ensuring that the result is null-terminated.
+ * @brief Copies up to size - 1 characters from the null-terminated
+ * 			string src to dst, ensuring that the result is null-terminated.
  *
  * @param dst  A pointer to the destination string.
  * @param src  A pointer to the source string.
  * @param size The size of the destination buffer.
  * @return The total length of the string it tried to create,
- * 		   excluding the null-terminator.
+ * 			excluding the null-terminator.
  */
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 
 /**
  * @brief Appends the null-terminated string src to the end of dst,
- * 		  ensuring that the result is null-terminated.
+ * 			ensuring that the result is null-terminated.
  *
  * @param dst  A pointer to the destination string.
  * @param src  A pointer to the source string.
  * @param size The size of the destination buffer.
  * @return The total length of the string it tried to create,
- * 		   excluding the null-terminator.
+ * 			excluding the null-terminator.
  */
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t				ft_strlcat(char *dst, const char *src, size_t size);
 
 /**
  * @brief Locates the first occurrence of the character c (converted to a char)
- * 		  in the string s.
+ * 			in the string s.
  *
  * @param s A pointer to the null-terminated string to be searched.
  * @param c The character to search for.
  * @return A pointer to the located character,
- * 		   or NULL if the character does not appear in the string.
+ * 			or NULL if the character does not appear in the string.
  */
-char	*ft_strchr(const char *s, int c);
+char				*ft_strchr(const char *s, int c);
 
 /**
  * @brief Locates the last occurrence of the character c (converted to a char)
- * 		  in the string s.
+ * 			in the string s.
  *
  * @param s A pointer to the null-terminated string to be searched.
  * @param c The character to search for.
- * @return A pointer to the located character, 
- * 		   or NULL if the character does not appear in the string.
+ * @return A pointer to the located character,
+ * 			or NULL if the character does not appear in the string.
  */
-char	*ft_strrchr(const char *s, int c);
+char				*ft_strrchr(const char *s, int c);
 
 /**
  * @brief Compares at most the first n bytes of two strings s1 and s2.
@@ -316,22 +319,25 @@ char	*ft_strrchr(const char *s, int c);
  * @param s1 A pointer to the first string.
  * @param s2 A pointer to the second string.
  * @param n  The maximum number of bytes to compare.
- * @return   An integer less than, equal to, or greater than zero if s1 is found,
+ * @return   An integer less than, equal to,
+	or greater than zero if s1 is found,
  *           respectively, to be less than, to match, or be greater than s2.
  */
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /**
  * @brief Locates the first occurrence of the null-terminated string to_find
- *  			  in the string str, where not more than len characters are searched.
+ *  				in the string str,
+					where not more than len characters are searched.
  *
  * @param str      A pointer to the string to be searched.
  * @param to_find  A pointer to the null-terminated string to search for.
  * @param len      The maximum number of characters to search.
- * @return         A pointer to the located substring, 
- * 				   or NULL if the substring is not found.
+ * @return         A pointer to the located substring,
+ * 					or NULL if the substring is not found.
  */
-char	*ft_strnstr(const char *str, const char *to_find, size_t len);
+char				*ft_strnstr(const char *str, const char *to_find,
+						size_t len);
 
 /* ########################	*/
 /*  String Part 2 Function	*/
@@ -343,18 +349,18 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len);
  * @param s A pointer to the null-terminated string to be duplicated.
  * @return A pointer to the newly allocated duplicate string.
  */
-char	*ft_strdup(const char *s);
+char				*ft_strdup(const char *s);
 
 /**
  * @brief Extracts a substring from the given null-terminated string s.
  *
- * @param s     A pointer to the null-terminated string 
+ * @param s     A pointer to the null-terminated string
  * 				to extract the substring from.
  * @param start The starting index of the substring.
  * @param len   The maximum length of the substring.
  * @return A pointer to the newly allocated substring.
  */
-char	*ft_substr(const char *s, unsigned int start, size_t len);
+char				*ft_substr(const char *s, unsigned int start, size_t len);
 
 /**
  * @brief Concatenates two null-terminated strings s1 and s2.
@@ -363,71 +369,71 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
  * @param s2 A pointer to the second null-terminated string.
  * @return A pointer to the newly allocated concatenated string.
  */
-char	*ft_strjoin(const char *s1, const char *s2);
+char				*ft_strjoin(const char *s1, const char *s2);
 
 /**
- * @brief Trims leading and trailing characters from the given 
+ * @brief Trims leading and trailing characters from the given
  * 				null-terminated string s based on the characters in the set.
  *
  * @param s   A pointer to the null-terminated string to be trimmed.
  * @param set A pointer to the null-terminated string containing
- * 			  the characters to trim.
+ * 				the characters to trim.
  * @return A pointer to the newly allocated trimmed string.
  */
-char	*ft_strtrim(const char *s, const char *set);
+char				*ft_strtrim(const char *s, const char *set);
 
 /**
  * @brief Splits the given null-terminated string s into an array
- * 		  of substrings based on the delimiter c.
+ * 			of substrings based on the delimiter c.
  *
  * @param s A pointer to the null-terminated string to be split.
  * @param c The delimiter character.
  * @return A pointer to the newly allocated array of substrings.
  */
-char	**ft_split(const char *s, char c);
+char				**ft_split(const char *s, char c);
 
 /**
  * @brief Applies the given function f to each character of
- * 		  the null-terminated string s,
+ * 			the null-terminated string s,
  *        creating a new string with the results.
  *
  * @param s A pointer to the null-terminated string to be mapped.
  * @param f The function to apply to each character.
  * @return A pointer to the newly allocated mapped string.
  */
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 
 /**
  * @brief Applies the given function f to each character of
- * 		  the null-terminated string s,
+ * 			the null-terminated string s,
  *        providing the index of each character.
  *
  * @param s A pointer to the null-terminated string to be iterated.
  * @param f The function to apply to each character.
  */
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /* ####################	*/
 /*  Integer Function	*/
 /* ####################	*/
 
 /**
- * @brief Converts the initial portion of 
- * 		  the null-terminated string str to a double.
+ * @brief Converts the initial portion of
+ * 			the null-terminated string str to a double.
  *
  * @param str A pointer to the null-terminated string to be converted.
  * @return The converted double value or -1 if the conversion fails.
  */
-double	ft_strtod(const char *str);
+double				ft_strtod(const char *str);
 
 /**
  * @brief Converts the initial portion of
- * 		  the null-terminated string str to an integer.
+ * 			the null-terminated string str to an integer.
  *
  * @param str A pointer to the null-terminated string to be converted.
  * @return The converted integer value.
  */
-int		ft_atoi(const char *str);
+int					ft_atoi(const char *str);
 
 /**
  * @brief Converts an integer to a null-terminated string.
@@ -435,7 +441,7 @@ int		ft_atoi(const char *str);
  * @param nb The integer to be converted.
  * @return A pointer to the newly allocated string representing the integer.
  */
-char	*ft_itoa(int nb);
+char				*ft_itoa(int nb);
 
 /* ################	*/
 /*  Write Function	*/
@@ -443,11 +449,11 @@ char	*ft_itoa(int nb);
 
 /**
  * @brief Outputs a single character to the specified file descriptor.
- * 
+ *
  * @param c The character to be printed.
  * @param fd The file descriptor where the character will be written.
  */
-void	ft_putchar_fd(char c, int fd);
+void				ft_putchar_fd(char c, int fd);
 
 /**
  * @brief Outputs a string to the specified file descriptor.
@@ -455,7 +461,7 @@ void	ft_putchar_fd(char c, int fd);
  * @param s The string to be printed.
  * @param fd The file descriptor where the string will be written.
  */
-void	ft_putstr_fd(char *s, int fd);
+void				ft_putstr_fd(char *s, int fd);
 
 /**
  * @brief Outputs a string followed by newline to the specified file descriptor.
@@ -463,7 +469,7 @@ void	ft_putstr_fd(char *s, int fd);
  * @param s The string to be printed.
  * @param fd The file descriptor where the string and newline will be written.
  */
-void	ft_putendl_fd(char *s, int fd);
+void				ft_putendl_fd(char *s, int fd);
 
 /**
  * @brief Outputs an integer to the specified file descriptor.
@@ -471,6 +477,6 @@ void	ft_putendl_fd(char *s, int fd);
  * @param n The integer to be printed.
  * @param fd The file descriptor where the integer will be written.
  */
-void	ft_putnbr_fd(int n, int fd);
+void				ft_putnbr_fd(int n, int fd);
 
 #endif
