@@ -6,39 +6,13 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:23:17 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/20 19:25:41 by jbrousse         ###   ########.fr       */
+/*   Updated: 2023/12/22 15:58:20 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *str)
-{
-	size_t	count;
-
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
-}
-
-char	*ft_strchr(char	*str, int c)
-{
-	int	i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-	{
-		if (str[i] == (char)c)
-			return ((char *)&str[i]);
-		i++;
-	}
-	return (0);
-}
-
-char	*ft_strjoin(char *stach, char *buffer)
+char	*stach_buffjoin(char *stach, char *buffer)
 {
 	char	*str;
 	int		i;

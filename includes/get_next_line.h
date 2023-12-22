@@ -6,13 +6,14 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:23:36 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/20 19:23:39 by jbrousse         ###   ########.fr       */
+/*   Updated: 2023/12/22 15:59:33 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
+# include "libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -25,8 +26,6 @@ char	*ft_read_and_stach(char *stach, int fd);
 char	*ft_create_line(char *stach);
 char	*ft_reset_stach(char *stach);
 
-size_t	ft_strlen(char *str);
-char	*ft_strchr(char	*str, int c);
-char	*ft_strjoin(char *stach, char *buffer);
+char	*stach_buffjoin(char *stach, char *buffer);
 
 #endif

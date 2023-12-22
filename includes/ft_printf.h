@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:10:44 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/03 16:46:29 by jbrousse         ###   ########.fr       */
+/*   Updated: 2023/12/22 16:00:57 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stddef.h>
 # include "libft.h"
 
 typedef struct s_flags{

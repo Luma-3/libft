@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:23:10 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/20 19:26:01 by jbrousse         ###   ########.fr       */
+/*   Updated: 2023/12/22 15:58:20 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_read_and_stach(char *stach, int fd)
 			return (0);
 		}
 		buffer[rd_bytes] = '\0';
-		stach = ft_strjoin(stach, buffer);
+		stach = stach_buffjoin(stach, buffer);
 	}
 	free(buffer);
 	return (stach);
