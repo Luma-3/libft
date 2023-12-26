@@ -157,15 +157,7 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c $(OBJ_DIR)
 	@$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
 
 	@$(eval COMPILED_SRCS=$(shell echo $$(($(COMPILED_SRCS)+1))))
-	@echo -n "$(COLOR_BLUE)Compiling Objects Libft: $(COLOR_RESET)[$(COLOR_GREEN)"
-	@for i in $(shell seq 1 25); do \
-		if [ $$i -le $$(($(COMPILED_SRCS)*25/$(TOTAL_SRCS))) ]; then \
-			echo -n "♥"; \
-		else \
-			echo -n "."; \
-		fi; \
-	done
-	@echo -n "$(COLOR_RESET)] $(COMPILED_SRCS)/$(TOTAL_SRCS)\r"
+	@printf "\rCompiling: [%-25s] %d/%d" "$(shell echo '#########################\c' | cut -c 1-$(shell echo "$$((($(COMPILED_SRCS)*25)/$(TOTAL_SRCS)))"))" "$(COMPILED_SRCS)" "$(TOTAL_SRCS)"
 
 $(NAME): $(OBJ)
 	@echo "$(COLOR_BLUE)\nCompiling libft library...$(COLOR_RESET)"
