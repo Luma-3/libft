@@ -125,6 +125,14 @@ OBJ			=	$(addprefix $(OBJ_DIR), $(SRC_LIST:.c=.o))
 TOTAL_SRCS		=	$(words $(SRC))
 COMPILED_SRCS	=	0
 
+define print_progress
+	@echo -n "$(COLOR_BLUE)Compiling: [$(COLOR_GREEN)"
+	@for i in $(shell seq 1 25); do \
+		[ $$i -le $$(($(1)*25/$(2))) ] && echo -n "#" || echo -n "."; \
+	done
+	@echo -n "$(COLOR_BLUE)] $(1)/$(2)$(COLOR_RESET)\r"
+endef
+
 ##############
 ##	COLORS	##
 ##############
@@ -157,12 +165,11 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c $(OBJ_DIR)
 	@$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
 
 	@$(eval COMPILED_SRCS=$(shell echo $$(($(COMPILED_SRCS)+1))))
-	@printf "\rCompiling: [%-25s] %d/%d" "$(shell echo '#########################\c' | cut -c 1-$(shell echo "$$((($(COMPILED_SRCS)*25)/$(TOTAL_SRCS)))"))" "$(COMPILED_SRCS)" "$(TOTAL_SRCS)"
+	@$(call print_progress,$(COMPILED_SRCS),$(TOTAL_SRCS))
 
 $(NAME): $(OBJ)
-	@echo "$(COLOR_BLUE)\nCompiling libft library...$(COLOR_RESET)"
 	@ar rcs $(NAME) $(OBJ)
-	@echo "$(COLOR_GREEN)Compilation complete !$(COLOR_RESET)"
+	@echo "\n$(COLOR_GREEN)Compilation complete !$(COLOR_RESET)"
 
 clean: 
 	@rm -fr  $(OBJ_DIR)
