@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:42:37 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/11/23 14:50:29 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:49:10 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_format_int(va_list args, t_flags flags)
 
 	len = 0;
 	value = va_arg(args, int);
-		num = ft_itoa(value);
+	num = ft_itoa(value);
 	if (flags.left == 1)
 	{
 		len += ft_print_positive(flags, value);

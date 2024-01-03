@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:10:44 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/22 16:00:57 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:48:37 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <stddef.h>
 # include "libft.h"
 
-typedef struct s_flags{
+typedef struct s_flags
+{
 	int	width;
 	int	zero;
 	int	left;
@@ -27,7 +28,8 @@ typedef struct s_flags{
 	int	specifier;
 }				t_flags;
 
-typedef struct s_format{
+typedef struct s_format
+{
 	char	specifier;
 	int		(*handler)(va_list args, t_flags flags);
 }				t_format;
