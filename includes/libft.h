@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/22 15:45:37 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:48:13 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 
 /**
 
-	* @brief Deletes a single node in the list using the provided deletion function.
+ * @brief Deletes a single node in the list using the provided 
+ *		  deletion function.
  *
  * @param lst The node to be deleted.
  * @param del The deletion function to be applied to the node's content.
