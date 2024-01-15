@@ -68,6 +68,10 @@ SRC_PRINTF_LIST			=	flags_utils.c		\
 							specifier_utils.c
 SRC_PRINTF				=	$(addprefix $(SRC_PRINTF_DIR), $(SRC_PRINTF_LIST))
 
+SRC_STACK_DIR			=	stack/
+SRC_STACK_LIST			=	
+SRC_STACK				= $(addprefix $(SRC_STACK_DIR), $(SRC_STACK_LIST))
+
 SRC_STRING_DIR			=	string/
 SRC_STRING_LIST			=	ft_split.c			\
 							ft_strchr.c 		\

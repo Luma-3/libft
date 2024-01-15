@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/03 15:48:13 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/15 19:12:22 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include "ft_printf.h"
+# include "ft_stack.h"
 # include "get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>
