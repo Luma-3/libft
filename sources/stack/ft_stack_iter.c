@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_new_stack.c                                     :+:      :+:    :+:   */
+/*   ft_stack_iter.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 16:11:33 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/16 11:27:42 by jbrousse         ###   ########.fr       */
+/*   Created: 2024/01/17 17:37:36 by jbrousse          #+#    #+#             */
+/*   Updated: 2024/01/17 18:28:07 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-void	ft_new_stack(t_stack *stack)
+void	ft_stack_iter(t_stack **stack, void (*f)(void *))
 {
-	if (stack->top != NULL)
+	t_stack	*current;
+
+	if (!*stack)
 		return ;
-	stack->top = NULL;
+	current = *stack;
+	f(current->data);
+	current = current->down;
+	while (current != *stack && current != NULL)
+	{
+		f(current->data);
+		current = current->down;
+	}
 }

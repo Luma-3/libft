@@ -6,28 +6,28 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:49:19 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/15 18:59:07 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:28:19 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-void	*ft_pop(t_stack *stack)
+void	*ft_pop(t_stack **stack)
 {
 	void	*data;
-	t_node	*del_node;
+	t_stack	*del_node;
 
-	if (stack->top == NULL)
+	if (!*stack)
 		return (NULL);
-	del_node = stack->top;
-	data = del_node->data;
-	if (stack->top->next == stack->top)
-		stack->top = NULL;
+	data = (*stack)->data;
+	del_node = *stack;
+	if ((*stack)->up == *stack)
+		*stack = NULL;
 	else
 	{
-		stack->top->pre->next = stack->top->next;
-		stack->top->next->pre = stack->top->pre;
-		stack->top = stack->top->pre;
+		(*stack)->down->up = (*stack)->up;
+		(*stack)->up->down = (*stack)->down;
+		*stack = (*stack)->down;
 	}
 	free(del_node);
 	return (data);

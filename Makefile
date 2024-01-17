@@ -3,7 +3,7 @@
 ###############
 
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra -I
+CFLAGS	=	-g3 -Wall -Werror -Wextra -I
 
 ##############
 ##  SOURCE	##
@@ -69,7 +69,12 @@ SRC_PRINTF_LIST			=	flags_utils.c		\
 SRC_PRINTF				=	$(addprefix $(SRC_PRINTF_DIR), $(SRC_PRINTF_LIST))
 
 SRC_STACK_DIR			=	stack/
-SRC_STACK_LIST			=	
+SRC_STACK_LIST			=	ft_pop.c			\
+							ft_push.c			\
+							ft_roll_down.c		\
+							ft_roll_up.c		\
+							ft_stack_iter.c		\
+							ft_swap.c
 SRC_STACK				= $(addprefix $(SRC_STACK_DIR), $(SRC_STACK_LIST))
 
 SRC_STRING_DIR			=	string/
@@ -103,6 +108,7 @@ SRC_LIST				=	$(SRC_CHAIN_LIST)	\
 							$(SRC_INTEGER)		\
 							$(SRC_MEM)			\
 							$(SRC_PRINTF)		\
+							$(SRC_STACK)		\
 							$(SRC_STRING)		\
 							$(SRC_WRITE)
 SRC						=	$(addprefix $(SRC_DIR), $(SRC_LIST))
@@ -161,6 +167,7 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)$(SRC_INTEGER_DIR)
 	@mkdir -p $(OBJ_DIR)$(SRC_MEM_DIR)
 	@mkdir -p $(OBJ_DIR)$(SRC_PRINTF_DIR)
+	@mkdir -p $(OBJ_DIR)$(SRC_STACK_DIR)
 	@mkdir -p $(OBJ_DIR)$(SRC_STRING_DIR)
 	@mkdir -p $(OBJ_DIR)$(SRC_WRITE_DIR)
 

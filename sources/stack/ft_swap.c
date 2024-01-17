@@ -6,25 +6,25 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 11:52:17 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/16 17:35:05 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:28:35 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-void	ft_swap(t_stack *stack)
+void	ft_swap(t_stack **stack)
 {
-	t_node	*tmp;
+	t_stack	*tmp;
 
-	if (!stack->top || !stack || !stack->top->next)
+	if (!*stack || !(*stack)->down)
 		return ;
-	tmp = stack->top;
-	tmp->next->pre = tmp->pre;
-	tmp->pre = tmp->next;
-	tmp->next = tmp->next->next;
-	if (tmp->next != NULL)
-		tmp->next->pre = tmp;
-	tmp->pre->next = tmp;
-	if (tmp->pre->pre == NULL)
-		stack->top = tmp->pre;
+	tmp = *stack;
+	tmp->up->down = tmp->down;
+	tmp->down = tmp->up;
+	tmp->up = tmp->up->up;
+	if (tmp->up != NULL)
+		tmp->up->down = tmp;
+	tmp->down->up = tmp;
+	if (tmp->down->down == NULL)
+		*stack = tmp->down;
 }
