@@ -69,7 +69,8 @@ SRC_PRINTF_LIST			=	flags_utils.c		\
 SRC_PRINTF				=	$(addprefix $(SRC_PRINTF_DIR), $(SRC_PRINTF_LIST))
 
 SRC_STACK_DIR			=	stack/
-SRC_STACK_LIST			=	ft_pop.c			\
+SRC_STACK_LIST			=	ft_free_stack.c		\
+							ft_pop.c			\
 							ft_push.c			\
 							ft_roll_down.c		\
 							ft_roll_up.c		\

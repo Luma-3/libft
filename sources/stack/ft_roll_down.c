@@ -6,15 +6,26 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 11:42:06 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/17 18:28:15 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/18 11:55:03 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-void	ft_roll_down(t_stack **stack)
+void	ft_roll_down(t_stack *stack)
 {
-	if (!*stack)
+	t_node	*current;
+	t_node	*prev;
+
+	if (!stack->top || !stack->top->next)
 		return ;
-	*stack = (*stack)->up;
+	current = stack->top;
+	while (current->next)
+	{
+		prev = current;
+		current = current->next;
+	}
+	prev->next = NULL;
+	current->next = stack->top;
+	stack->top = current;
 }
