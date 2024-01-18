@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:00:58 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/18 12:35:37 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:21:38 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 	t_node	*top;
 }			t_stack;
 
+t_stack		*ft_create_stack(void);
 void		ft_free_stack(t_stack *stack, void (*del)(void *));
 void		*ft_pop(t_stack *stack);
 void		ft_push(t_stack *stack, void *data);
