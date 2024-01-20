@@ -76,6 +76,7 @@ SRC_STACK_LIST			=	ft_create_stack.c	\
 							ft_roll_down.c		\
 							ft_roll_up.c		\
 							ft_stack_iter.c		\
+							ft_stack_len.c		\
 							ft_swap.c			\
 							ft_valueof.c
 SRC_STACK				= $(addprefix $(SRC_STACK_DIR), $(SRC_STACK_LIST))
