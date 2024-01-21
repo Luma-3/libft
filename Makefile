@@ -71,6 +71,7 @@ SRC_PRINTF				=	$(addprefix $(SRC_PRINTF_DIR), $(SRC_PRINTF_LIST))
 SRC_STACK_DIR			=	stack/
 SRC_STACK_LIST			=	ft_create_stack.c	\
 							ft_free_stack.c		\
+							ft_get_node.c		\
 							ft_pop.c			\
 							ft_push.c			\
 							ft_roll_down.c		\
