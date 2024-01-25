@@ -6,9 +6,11 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:51:03 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/25 13:52:27 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:16:11 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_rm_split(char **tab)
 {
