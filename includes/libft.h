@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/15 19:12:22 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:57:01 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include "ft_printf.h"
-# include "ft_stack.h"
 # include "get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>
@@ -383,6 +382,13 @@ char				*ft_strjoin(const char *s1, const char *s2);
  * @return A pointer to the newly allocated trimmed string.
  */
 char				*ft_strtrim(const char *s, const char *set);
+
+/**
+ * @brief free all case of tab alloc by split function
+ * 
+ * @param tab A pointer to the null-terminated array of strind
+*/
+void				ft_rm_split(char **tab);
 
 /**
  * @brief Splits the given null-terminated string s into an array

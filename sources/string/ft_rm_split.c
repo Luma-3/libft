@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_roll_up.c                                       :+:      :+:    :+:   */
+/*   ft_rm_split.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 17:27:23 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/18 13:31:39 by jbrousse         ###   ########.fr       */
+/*   Created: 2024/01/25 13:51:03 by jbrousse          #+#    #+#             */
+/*   Updated: 2024/01/25 13:52:27 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stack.h"
-
-void	ft_roll_up(t_stack *stack)
+void	ft_rm_split(char **tab)
 {
-	t_node	*tmp;
-	t_node	*current;
+	int	i;
 
-	if (!stack->top || !stack->top->next)
-		return ;
-	tmp = stack->top;
-	stack->top = stack->top->next;
-	tmp->next = NULL;
-	current = stack->top;
-	while (current->next)
-		current = current->next;
-	current->next = tmp;
+	i = -1;
+	while (tab[++i])
+		free(tab[i]);
+	free(tab);
 }
