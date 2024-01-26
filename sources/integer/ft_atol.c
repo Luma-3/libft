@@ -6,11 +6,11 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 23:25:26 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/26 23:26:36 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/26 23:43:28 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	int		i;
 	int		sign;
