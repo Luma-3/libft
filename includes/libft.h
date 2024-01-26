@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/25 13:57:01 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/01/26 23:29:18 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -433,6 +433,15 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
  * @return The converted double value or -1 if the conversion fails.
  */
 double				ft_strtod(const char *str);
+
+/**
+ * @brief Coverts the initial portion of
+ * 			the null-terminated string to an long integer
+ * 
+ * @param str A pointer to the null-terminated string to be converted.
+ * @return The converted long integer value.
+*/
+long				ft_atol(const char *str);
 
 /**
  * @brief Converts the initial portion of
