@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:47:08 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/11/23 15:30:37 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:00:04 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (NULL);
 	words = ft_count_words(s, c);
+	if (words <= 0)
+		return (NULL);
 	tab = ft_calloc(words + 1, sizeof(char *));
 	if (!tab)
 		return (NULL);
