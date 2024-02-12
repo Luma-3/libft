@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/01/26 23:29:18 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:36:30 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,6 +152,14 @@ int					ft_isdigit(int c);
  * @return 1 if the character is printable, 0 otherwise.
  */
 int					ft_isprint(int c);
+
+/**
+ * @brief Checks if the given character is a whitespace character.
+ * 
+ * @param c The character to be checked.
+ * @return 1 if the character is a whitespace character, 0 otherwise.
+*/
+int					ft_iswhitespace(char c);
 
 /* ################	*/
 /*	Char function	*/

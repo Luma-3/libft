@@ -33,7 +33,8 @@ SRC_COMPARE_LIST		=	ft_isalnum.c 		\
 							ft_isalpha.c 		\
 							ft_isascii.c		\
 							ft_isdigit.c 		\
-							ft_isprint.c
+							ft_isprint.c		\
+							ft_iswhitespace.c
 SRC_COMPARE				=	$(addprefix $(SRC_COMPARE_DIR), $(SRC_COMPARE_LIST))
 
 SRC_GNL_DIR				=	gnl/
