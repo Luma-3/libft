@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:08:36 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/11/13 13:48:24 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:06:41 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*newlst;
 	t_list	*startlst;
 
-	if (!lst || !f || !del)
-		return (0);
 	startlst = NULL;
 	while (lst)
 	{

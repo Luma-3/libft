@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:54:40 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/11/13 13:03:00 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:06:18 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*tmp;
 	t_list	*tmp2;
 
-	if (!lst || !del)
-		return ;
 	tmp = *lst;
 	while (tmp)
 	{
