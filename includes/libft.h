@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/26 16:50:47 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:15:21 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -277,7 +277,7 @@ void				*ft_calloc(size_t nmemb, size_t size);
  * 
  * @return A pointer to the newly allocated array of substrings.
 */
-char	**ft_copy_tab(char **tab, int start, int end);
+char				**ft_copy_tab(char **tab, int start, int end);
 
 /**
  * @brief Calculates the length of the given null-terminated string.
