@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/12 17:36:30 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:50:47 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -267,6 +267,17 @@ void				*ft_calloc(size_t nmemb, size_t size);
 /* ################	*/
 /*  String Function	*/
 /* ################ */
+
+/**
+ * @brief Copy double tab from start to end
+ * 
+ * @param tab A pointer to the array of string
+ * @param start The start index of the copy
+ * @param end The end index of the copy
+ * 
+ * @return A pointer to the newly allocated array of substrings.
+*/
+char	**ft_copy_tab(char **tab, int start, int end);
 
 /**
  * @brief Calculates the length of the given null-terminated string.
