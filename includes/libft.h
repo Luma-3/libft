@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/26 17:15:21 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:05:57 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -370,6 +370,24 @@ char				*ft_strnstr(const char *str, const char *to_find,
  * @return A pointer to the newly allocated duplicate string.
  */
 char				*ft_strdup(const char *s);
+
+/**
+ * @brief Duplicates the first n bytes of the given null-terminated string s.
+ *
+ * @param s A pointer to the null-terminated string to be duplicated.
+ * @param n The number of bytes to duplicate.
+ * @return A pointer to the newly allocated duplicate string.
+ */
+char				*ft_strndup(const char *s, size_t n);
+
+/**
+ * @brief Counts the number of whitespace characters in the given 
+ * null-terminated string.
+ *
+ * @param str A pointer to the null-terminated string to be counted.
+ * @return The number of whitespace characters.
+ */
+int					ft_count_whitespaces(const char *str);
 
 /**
  * @brief Extracts a substring from the given null-terminated string s.
