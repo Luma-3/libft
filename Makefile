@@ -71,21 +71,23 @@ SRC_PRINTF_LIST			=	flags_utils.c		\
 SRC_PRINTF				=	$(addprefix $(SRC_PRINTF_DIR), $(SRC_PRINTF_LIST))
 
 SRC_STRING_DIR			=	string/
-SRC_STRING_LIST			=	ft_copy_tab.c		\
-							ft_rm_split.c		\
-							ft_split.c			\
-							ft_strchr.c 		\
-							ft_strdup.c			\
-							ft_striteri.c		\
-							ft_strjoin.c		\
-							ft_strlcat.c 		\
-							ft_strlcpy.c 		\
-							ft_strlen.c			\
-							ft_strmapi.c		\
-							ft_strncmp.c		\
-							ft_strnstr.c		\
-							ft_strrchr.c		\
-							ft_strtrim.c		\
+SRC_STRING_LIST			=	ft_copy_tab.c			\
+							ft_count_whitespaces.c	\
+							ft_rm_split.c			\
+							ft_split.c				\
+							ft_strchr.c 			\
+							ft_strdup.c				\
+							ft_striteri.c			\
+							ft_strjoin.c			\
+							ft_strlcat.c 			\
+							ft_strlcpy.c 			\
+							ft_strlen.c				\
+							ft_strmapi.c			\
+							ft_strncmp.c			\
+							ft_strndup.c			\
+							ft_strnstr.c			\
+							ft_strrchr.c			\
+							ft_strtrim.c			\
 							ft_substr.c
 SRC_STRING				=	$(addprefix $(SRC_STRING_DIR), $(SRC_STRING_LIST))
 
