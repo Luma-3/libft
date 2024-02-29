@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/29 15:05:57 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:22:28 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,14 @@ t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 
 /**
-
- * @brief Deletes a single node in the list using the provided 
- *		  deletion function.
+ * @brief Deletes the specified node using the provided deletion function.
  *
- * @param lst The node to be deleted.
+ * @param prev A pointer to the previous node.
+ * @param node A pointer to the node to be deleted.
  * @param del The deletion function to be applied to the node's content.
  */
-void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstdelone(t_list *prev, t_list *node,
+						void (*del)(void *));
 
 /**
  * @brief Clears the entire list using the provided deletion function.
@@ -155,10 +155,10 @@ int					ft_isprint(int c);
 
 /**
  * @brief Checks if the given character is a whitespace character.
- * 
+ *
  * @param c The character to be checked.
  * @return 1 if the character is a whitespace character, 0 otherwise.
-*/
+ */
 int					ft_iswhitespace(char c);
 
 /* ################	*/
@@ -270,13 +270,13 @@ void				*ft_calloc(size_t nmemb, size_t size);
 
 /**
  * @brief Copy double tab from start to end
- * 
+ *
  * @param tab A pointer to the array of string
  * @param start The start index of the copy
  * @param end The end index of the copy
- * 
+ *
  * @return A pointer to the newly allocated array of substrings.
-*/
+ */
 char				**ft_copy_tab(char **tab, int start, int end);
 
 /**
@@ -381,7 +381,7 @@ char				*ft_strdup(const char *s);
 char				*ft_strndup(const char *s, size_t n);
 
 /**
- * @brief Counts the number of whitespace characters in the given 
+ * @brief Counts the number of whitespace characters in the given
  * null-terminated string.
  *
  * @param str A pointer to the null-terminated string to be counted.
@@ -422,9 +422,9 @@ char				*ft_strtrim(const char *s, const char *set);
 
 /**
  * @brief free all case of tab alloc by split function
- * 
+ *
  * @param tab A pointer to the null-terminated array of strind
-*/
+ */
 void				ft_rm_split(char **tab);
 
 /**
@@ -474,10 +474,10 @@ double				ft_strtod(const char *str);
 /**
  * @brief Coverts the initial portion of
  * 			the null-terminated string to an long integer
- * 
+ *
  * @param str A pointer to the null-terminated string to be converted.
  * @return The converted long integer value.
-*/
+ */
 long				ft_atol(const char *str);
 
 /**
