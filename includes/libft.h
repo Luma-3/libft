@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/29 16:43:24 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:49:02 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,12 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 /**
  * @brief Deletes the specified node using the provided deletion function.
  *
- * @param lst A pointer to the pointer to the node to be deleted.
+ * @param lst A pointer to the pointer to the list.
+ * @param node The node to be deleted.
  * @param del The deletion function to be applied to the node's content.
  */
-void				ft_lstdelone(t_list **lst, void (*del)(void *));
+void				ft_lstdelone(t_list **lst, t_list *node,
+						void (*del)(void *));
 
 /**
  * @brief Clears the entire list using the provided deletion function.
