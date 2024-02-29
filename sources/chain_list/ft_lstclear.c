@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:54:40 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/29 16:21:00 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:33:52 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (tmp)
 	{
 		tmp2 = tmp -> next;
-		ft_lstdelone(NULL, tmp, del);
+		del(tmp -> content);
+		free(tmp);
 		tmp = tmp2;
 	}
 	*lst = NULL;

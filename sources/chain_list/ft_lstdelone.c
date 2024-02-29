@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:45:42 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/29 16:30:57 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:35:17 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_lstdelone(t_list **lst, t_list *prev,
 		prev -> next = node -> next;
 	else if (!prev && node -> next)
 		lst = &node -> next;
+	(void)lst;
 	del(node -> content);
 	free(node);
 }
