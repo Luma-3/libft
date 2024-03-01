@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:47:42 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/29 14:59:38 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:22:54 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_copy_tab(char **tab, int start, int end)
 	char	**new_tab;
 
 	i = 0;
-	new_tab = ft_calloc(end - start, sizeof(char *));
+	new_tab = ft_calloc(end - start + 1, sizeof(char *));
 	while (start != end)
 	{
 		new_tab[i] = ft_strdup(tab[start]);
