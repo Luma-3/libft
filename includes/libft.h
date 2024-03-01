@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/29 16:49:02 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:26:39 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -381,13 +381,13 @@ char				*ft_strdup(const char *s);
 char				*ft_strndup(const char *s, size_t n);
 
 /**
- * @brief Counts the number of whitespace characters in the given
- * null-terminated string.
+ * @brief Skip whitespace in the string to the first non-whitespace character.
  *
- * @param str A pointer to the null-terminated string to be counted.
- * @return The number of whitespace characters.
+ * @param prompt A pointer to the null-terminated string to be skipped.
+ * @param i The index of the string
+ * @return The index of the first non-whitespace character.
  */
-int					ft_count_whitespaces(const char *str);
+int					ft_skip_whitespaces(const char *prompt, int i);
 
 /**
  * @brief Extracts a substring from the given null-terminated string s.

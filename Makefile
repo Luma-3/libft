@@ -72,8 +72,8 @@ SRC_PRINTF				=	$(addprefix $(SRC_PRINTF_DIR), $(SRC_PRINTF_LIST))
 
 SRC_STRING_DIR			=	string/
 SRC_STRING_LIST			=	ft_copy_tab.c			\
-							ft_count_whitespaces.c	\
 							ft_rm_split.c			\
+							ft_skip_whitespaces.c	\
 							ft_split.c				\
 							ft_strchr.c 			\
 							ft_strdup.c				\

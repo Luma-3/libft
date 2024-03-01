@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_whitespaces.c                             :+:      :+:    :+:   */
+/*   ft_skip_whitespaces.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 14:57:05 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/02/29 15:00:18 by jbrousse         ###   ########.fr       */
+/*   Created: 2024/03/01 11:22:16 by jbrousse          #+#    #+#             */
+/*   Updated: 2024/03/01 11:26:22 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_whitespaces(const char *str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r'))
+int	ft_skip_whitespaces(const char *prompt, int i)
+{
+	while (ft_iswhitespace(prompt[i]) == 1 && prompt[i])
 		i++;
 	return (i);
 }
