@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/03/01 11:26:39 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:31:31 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,22 @@ typedef struct s_list
 	struct s_list	*next;
 
 }					t_list;
+
+/* ################	*/
+/*	 Queue Struct	*/
+/* ################	*/
+
+typedef struct s_node
+{
+	void			*content;
+	struct s_node	*next;
+}					t_node;
+
+typedef struct s_queue
+{
+	t_node	*first;
+	t_node	*last;
+}			t_queue;
 
 /* ################	*/
 /*	List function	*/
@@ -263,6 +279,65 @@ void				*ft_memchr(const void *s, int c, size_t size);
  * @return A pointer to the allocated memory, or NULL if the allocation fails.
  */
 void				*ft_calloc(size_t nmemb, size_t size);
+
+/* ################	*/
+/*	Queue function	*/
+/* ################	*/
+
+/**
+ * @brief Clears the entire queue using the provided deletion function.
+ *
+ * @param queue A pointer to the queue to be cleared.
+ * @param del   The deletion function to be applied to each node's content.
+ */
+void				ft_clear_queue(t_queue *queue, void (*del)(void *));
+
+/**
+ * @brief Removes the first node from the queue and returns its content.
+ *
+ * @param queue A pointer to the queue.
+ * @return The content of the removed node, or NULL if the queue is empty.
+ */
+void				*ft_dequeue(t_queue *queue);
+
+/**
+ * @brief Displays the content of the queue using the provided display function.
+ *
+ * @param queue   A pointer to the queue to be displayed.
+ * @param display The display function to be applied to each node's content.
+ */
+void				ft_display_queue(t_queue *queue, void (*display)(void *));
+
+/**
+ * @brief Adds a new node to the back of the queue.
+ *
+ * @param queue   A pointer to the queue.
+ * @param content The content to be added to the queue.
+ */
+void				ft_enqueue(t_queue *queue, void *content);
+
+/**
+ * @brief Initializes a new queue.
+ *
+ * @return A pointer to the newly initialized queue.
+ */
+t_queue				*ft_init_queue(void);
+
+/**
+ * @brief Checks if the queue is empty.
+ *
+ * @param queue A pointer to the queue.
+ * @return 1 if the queue is empty, 0 otherwise.
+ */
+int					ft_is_empty_queue(t_queue *queue);
+
+/**
+ * @brief Returns the content of the first node in the queue without removing it.
+ *
+ * @param queue A pointer to the queue.
+ * @return The content of the first node, or NULL if the queue is empty.
+ */
+void				*ft_peek(t_queue *queue);
 
 /* ################	*/
 /*  String Function	*/

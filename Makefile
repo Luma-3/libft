@@ -70,6 +70,16 @@ SRC_PRINTF_LIST			=	flags_utils.c		\
 							specifier_utils.c
 SRC_PRINTF				=	$(addprefix $(SRC_PRINTF_DIR), $(SRC_PRINTF_LIST))
 
+SRC_QUEUE_DIR			=	queue/
+SRC_QUEUE_LIST			=	ft_clear_queue.c		\
+							ft_dequeue.c			\
+							ft_display_queue.c		\
+							ft_enqueue.c			\
+							ft_init_queue.c			\
+							ft_is_empty_queue.c		\
+							ft_peek_queue.c
+SRC_QUEUE				=	$(addprefix $(SRC_QUEUE_DIR), $(SRC_QUEUE_LIST))
+
 SRC_STRING_DIR			=	string/
 SRC_STRING_LIST			=	ft_copy_tab.c			\
 							ft_rm_split.c			\
@@ -105,6 +115,7 @@ SRC_LIST				=	$(SRC_CHAIN_LIST)	\
 							$(SRC_INTEGER)		\
 							$(SRC_MEM)			\
 							$(SRC_PRINTF)		\
+							$(SRC_QUEUE)		\
 							$(SRC_STRING)		\
 							$(SRC_WRITE)
 SRC						=	$(addprefix $(SRC_DIR), $(SRC_LIST))
@@ -163,6 +174,7 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)$(SRC_INTEGER_DIR)
 	@mkdir -p $(OBJ_DIR)$(SRC_MEM_DIR)
 	@mkdir -p $(OBJ_DIR)$(SRC_PRINTF_DIR)
+	@mkdir -p $(OBJ_DIR)$(SRC_QUEUE_DIR)
 	@mkdir -p $(OBJ_DIR)$(SRC_STACK_DIR)
 	@mkdir -p $(OBJ_DIR)$(SRC_STRING_DIR)
 	@mkdir -p $(OBJ_DIR)$(SRC_WRITE_DIR)
