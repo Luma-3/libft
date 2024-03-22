@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/03/22 10:01:05 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/03/22 13:34:53 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -307,6 +307,14 @@ void				*ft_dequeue(t_queue *queue);
  * @param display The display function to be applied to each node's content.
  */
 void				ft_display_queue(t_queue *queue, void (*display)(void *));
+
+/**
+ * @brief Duplicates the given queue.
+ *
+ * @param queue A pointer to the queue to be duplicated.
+ * @return A pointer to the newly duplicated queue.
+ */
+t_queue				*ft_dup_queue(t_queue *queue);
 
 /**
  * @brief Adds a new node to the back of the queue.
