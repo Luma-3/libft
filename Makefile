@@ -88,6 +88,7 @@ SRC_STRING_LIST			=	ft_copy_tab.c			\
 							ft_strchr.c 			\
 							ft_strdup.c				\
 							ft_striteri.c			\
+							ft_strjoin4.c			\
 							ft_strjoin.c			\
 							ft_strlcat.c 			\
 							ft_strlcpy.c 			\

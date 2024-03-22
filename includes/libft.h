@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/03/05 14:31:31 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/03/22 10:01:05 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -353,6 +353,18 @@ void				*ft_peek(t_queue *queue);
  * @return A pointer to the newly allocated array of substrings.
  */
 char				**ft_copy_tab(char **tab, int start, int end);
+
+/**
+ * @brief Concatenates four null-terminated strings s1, s2, s3, and s4.
+ * 
+ * @param s1 A pointer to the first null-terminated string.
+ * @param s2 A pointer to the second null-terminated string.
+ * @param s3 A pointer to the third null-terminated string.
+ * @param s4 A pointer to the fourth null-terminated string.
+ * 
+ * @return A pointer to the newly allocated concatenated string.
+ */
+char				*ft_strjoin4(char *s1, char *s2, char *s3, char *s4);
 
 /**
  * @brief Calculates the length of the given null-terminated string.
