@@ -74,6 +74,7 @@ SRC_QUEUE_DIR			=	queue/
 SRC_QUEUE_LIST			=	ft_clear_queue.c		\
 							ft_dequeue.c			\
 							ft_display_queue.c		\
+							ft_dup_queue.c			\
 							ft_enqueue.c			\
 							ft_init_queue.c			\
 							ft_is_empty_queue.c		\
