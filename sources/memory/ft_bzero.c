@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luma <luma@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:39:46 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/11/07 17:19:04 by luma             ###   ########.fr       */
+/*   Updated: 2024/03/23 16:42:53 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,4 @@ void	ft_bzero(void *s, size_t len)
 	mem = (unsigned char *)s;
 	while (i < len)
 		mem[i++] = '\0';
-	s = mem;
 }
