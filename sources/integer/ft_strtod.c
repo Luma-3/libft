@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:35:49 by jbrousse          #+#    #+#             */
-/*   Updated: 2023/12/22 13:12:12 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/03/23 16:39:51 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ double	ft_strtod(const char *str)
 	int		i;
 
 	i = 0;
-	nb = 0;
 	sign = 1;
 	while ((8 < str[i] && str[i] < 14) || str[i] == 32)
 		i++;
