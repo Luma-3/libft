@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:09:00 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/03/22 13:34:53 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/03/27 18:43:59 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -350,6 +350,21 @@ void				*ft_peek(t_queue *queue);
 /* ################	*/
 /*  String Function	*/
 /* ################ */
+
+/**
+ * @brief insert `insert_data` in `arg` when the first occurence of 
+ * 		`token` is found after `index`
+ * 
+ * @param arg The string to insert into
+ * @param insert_data The string to insert
+ * @param token The token to find
+ * @param index The index to start the search
+ * 
+ * @return A pointer to the newly allocated string, or if the function
+ * 			fails or there is no token, it returns arg.
+*/
+char				*ft_insert_str(char *arg, const char *insert_data,
+						const char *token, int index);
 
 /**
  * @brief Copy double tab from start to end

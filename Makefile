@@ -83,6 +83,7 @@ SRC_QUEUE				=	$(addprefix $(SRC_QUEUE_DIR), $(SRC_QUEUE_LIST))
 
 SRC_STRING_DIR			=	string/
 SRC_STRING_LIST			=	ft_copy_tab.c			\
+							ft_insert_str.c			\
 							ft_rm_split.c			\
 							ft_skip_whitespaces.c	\
 							ft_split.c				\
